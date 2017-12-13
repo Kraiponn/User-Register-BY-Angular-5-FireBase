@@ -1,0 +1,13 @@
+<ul class="employeeList">
+    <li *ngFor="let employee of employeeCollection" (click)="OpenForEdit(employee)" [class.selected]="employee == selectEmployee">
+        <span class="badge">{{employee.employeeID}}</span> {{employee.code}} - {{employee.name}}
+    </li>
+</ul>
+
+<div class="employeeForm">
+    <label>{{selectEmployee.employeeID == 0 ? "Insert Employee" : "Update Employee"}}</label><br>
+    <input class="textBox" [(ngModel)]="selectEmployee.code" placeholder="Code"> <br>
+    <input type="text" class="textBox" [(ngModel)]="selectEmployee.name" placeholder="Name"><br>
+    <button (click)="AddOrEdit()">Submit</button>
+    <button *ngIf="selectEmployee.employeeID != 0" (click)="deleteEmployee()">Delete</button>
+</div>

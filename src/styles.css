@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+}
+
+input.ng-invalid.ng-dirty {
+    border: 2px solid #fa0404;
+}
+
+button:hover,
+ul.list-group.hover li:hover {
+    cursor: pointer;
+}
